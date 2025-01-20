@@ -1,0 +1,3 @@
+Thanks for checking out blender interchange - a tool for importing data from blender into Unreal Engine 5 as simply as possible. With this tool you will be able to import .blend files as if they were fbx or usd files and integrate them into your existing pipeline. Blender Interchange is built for Unreal Engine's Interchange framework - which is becoming the new standard for importing content in the engine as of 5.5.
+
+Starting is simple. Simply install the plugin then follow this single setup step. TODO: Put in more info.
