@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Installing the plugin - Blender Interchange Documentation</title>
+        <title>Installing the plugin - Blender-Interchange-Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">Blender Interchange Documentation</a>
+                <a class="navbar-brand" href="..">Blender-Interchange-Documentation</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -38,6 +38,15 @@
                                 <a href=".." class="nav-link">Welcome</a>
                             </li>
                             <li class="nav-item">
+                                <a href="../Export%20Fine%20Control/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Feature%20Chart/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Importing%20Animations/" class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="./" class="nav-link active" aria-current="page">Installing the plugin</a>
                             </li>
                         </ul>
@@ -49,7 +58,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../Importing%20Animations/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -91,6 +100,11 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-bs-level="1"><a href="#extra-step-blender-path" class="nav-link">Extra Step - Blender Path</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-bs-level="1"><a href="#extra-step-studio-setup" class="nav-link">Extra Step - Studio Setup</a>
               <ul class="nav flex-column">
               </ul>
@@ -101,16 +115,18 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="installing-the-plugin">Installing the plugin</h1>
-<p>You can install the plugin off of the epic game's marketplace. New versions of the plugin will be released shortly after the release of each engine with pre-releases available with proof of purchase.</p>
+<p>You can install the plugin from <a href="https://www.fab.com/">Fab</a> which is unreal engine's official marketplace. New versions of the plugin will be released shortly after each official engine with pre-releases available with proof of purchase in our company's discord. We're generally working off of the latest engine version so expect speedy updates.</p>
 <h1 id="install-blender">Install Blender</h1>
 <p>Install <a href="https://www.blender.org/download/">blender</a> on your computer if you haven't already. You need installed on your blender to import blend files.</p>
 <h1 id="project-setup">Project Setup</h1>
-<p>Once you've installed the plugin you are almost there. In order to fully utilize the plugin there is one more step to carry out. </p>
-<p>Open up Engine Settings &gt; Engine &gt; Interchange (Blender)</p>
-<p>Hit the button to add blender interchange's pipelines to your projects interchange settings.</p>
-<p>After that you're done and ready to import blend files. Drag a blend file into the content browser and see for yourself.</p>
-<p>Optional: Explicitly the blender executable file path. If you don't set it the default install directory will be searched for blender installations. The latest version of blender will be used if you have multiple versions installed.</p>
-<p>You can view and edit which paths will be searched by looking at </p>
+<p>Once you've installed the plugin you're nearly done but there is one more important step that you should not skip. This step only needs to be done once per project</p>
+<p>Open up Engine Settings &gt; Engine &gt; Interchange (Blender)
+Hit the button to add blender interchange's pipelines to your projects interchange settings. This button modifies your project settings in one click to use the plugin's settings.
+After that you're done and ready to import blend files. </p>
+<p>After you apply the settings you can verify they were applied by going to Engine Settings &gt; Engine &gt; Interchange. The project settings should now include blender specific pipelines giving the plugin better control than the out of the box settings allow. This step is necessary to get support for some blender features such as morph targets and static mesh animations.</p>
+<h1 id="extra-step-blender-path">Extra Step - Blender Path</h1>
+<p>If you don't explicitly set a path for your computers blender installation, the path will be deduced and the latest version found will be used. If you are experiencing issues or would like a specific version of blender used you can set the path to blender here.</p>
+<p>You can also view and edit which paths are being searched for blend files. These paths vary per operating systems.</p>
 <h1 id="extra-step-studio-setup">Extra Step - Studio Setup</h1>
 <p>Interchange settings are PerUserProjectSettings. What that means is that they are not checked in version control and each user can have their own individual settings. If you would like every user to use the same default settings you can apply your local settings by clicking the button in the top-right corner. This will let one person set up the plugin and everyone else use it assuming they have blender installed.</p></div>
             </div>

@@ -4,27 +4,27 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Blender-Interchange-Documentation</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/fontawesome.min.css" rel="stylesheet">
-        <link href="css/brands.min.css" rel="stylesheet">
-        <link href="css/solid.min.css" rel="stylesheet">
-        <link href="css/v4-font-face.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Overview - Blender-Interchange-Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">Blender-Interchange-Documentation</a>
+                <a class="navbar-brand" href="..">Blender-Interchange-Documentation</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,19 +35,19 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href="." class="nav-link active" aria-current="page">Welcome</a>
+                                <a href=".." class="nav-link">Welcome</a>
                             </li>
                             <li class="nav-item">
-                                <a href="Export%20Fine%20Control/" class="nav-link">Overview</a>
+                                <a href="./" class="nav-link active" aria-current="page">Overview</a>
                             </li>
                             <li class="nav-item">
-                                <a href="Feature%20Chart/" class="nav-link">Overview</a>
+                                <a href="../Feature%20Chart/" class="nav-link">Overview</a>
                             </li>
                             <li class="nav-item">
-                                <a href="Importing%20Animations/" class="nav-link">Overview</a>
+                                <a href="../Importing%20Animations/" class="nav-link">Overview</a>
                             </li>
                             <li class="nav-item">
-                                <a href="Quickstart/" class="nav-link">Installing the plugin</a>
+                                <a href="../Quickstart/" class="nav-link">Installing the plugin</a>
                             </li>
                         </ul>
 
@@ -58,12 +58,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
+                                <a rel="prev" href=".." class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="Export%20Fine%20Control/" class="nav-link">
+                                <a rel="next" href="../Feature%20Chart/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -85,12 +85,27 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#welcome" class="nav-link">Welcome</a>
+            <li class="nav-item" data-bs-level="1"><a href="#overview" class="nav-link">Overview</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#why-interchange" class="nav-link">Why Interchange?</a>
+            <li class="nav-item" data-bs-level="1"><a href="#pipeline-settings" class="nav-link">Pipeline Settings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#translator-settings" class="nav-link">Translator Settings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#import-preview" class="nav-link">Import Preview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#warnings" class="nav-link">Warnings</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -99,16 +114,37 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="welcome">Welcome</h1>
-<p>This is the user guide for blender interchange - a tool for importing data from blender into Unreal Engine 5 as simply as possible. With this tool you can import .blend files by simply dragging and dropping them into the content browser. No more fiddling with export settings and manual export processes. </p>
-<h1 id="why-interchange">Why Interchange?</h1>
-<p>Blender Interchange is built on top of Unreal Engine's Interchange framework - which is becoming the new standard for importing content in the engine as of the 5.5 release. </p>
-<p>Interchange is a fully redesigned import flow that allows users to:
-- Save pipeline configuration settings as preset pipeline stacks for different workflows
-- Apply custom logic at any stage of the import process through blueprint, python or c++
-- Tweak the export process to their current game's needs
-- Assign imported content to folders</p>
-<p>You can learn more about interchange by watching epic's <a href="https://www.youtube.com/watch?v=Oq6KbrqkGnw">video demonstration</a> or checking out the <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/interchange-framework-in-unreal-engine">interchange demo project</a>. In the demo they show off advanced features like using unreal's geometry script to apply mirror modifiers on import. You could also do things like generate and assign collision.</p></div>
+<h1 id="overview">Overview</h1>
+<p>The settings for your import are laid out into 2 independent sections. Both settings affect how the file is processed.</p>
+<p>Pipeline Settings - What unreal does with the exported blend file information
+Translator Settings - How the blend file is exported from blender and how unreal translates the scene into file agnostic nodes </p>
+<h1 id="pipeline-settings">Pipeline Settings</h1>
+<p>This plugin ships with custom pipelines exposing more settings than unreal does out of the box. Pipelines allow you to control things like if meshes are merged into a single asset or imported as multiple separate assets. Each value can be reset to the pipeline default to by clicking the arrow on the left.</p>
+<p>![[Pasted image 20250123180538.png]]</p>
+<p>Each pipeline has it's own settings block which can be selected and configured separately. This plugin ships with folder creator pipeline that lets you separate assets in to folders based on their type.
+![[UnrealEditor_IMLIXxA0U8.png]]</p>
+<p>Pipelines can be saved to assets in your content browser and will appear as a  dropdown after you add the pipeline as an option to the project settings. Project Settings &gt; Engine &gt; Interchange. Make sure you add the settings under the per-translator setting for the Blender Translator.<br />
+![[UnrealEditor_G5XE1uXZvR.png]]
+Once you do you should see an option appear under stack presets in the top-left corner of the import dialog.
+![[UnrealEditor_6Q2pVYfgEd.png]]</p>
+<h1 id="translator-settings">Translator Settings</h1>
+<p>This plugin works by exporting either fbx or usd files from blender containing all of the information needed by unreal to create any assets. This is all done through blender's python API and some settings to control that process are exposed under translator settings.</p>
+<p>The settings can be opened by hitting the 3 dots in the top right. These settings are slightly hidden and likely to move post unreal engine 5.5. </p>
+<p>![[Pasted image 20250123181506.png]]</p>
+<p>The translator settings are laid out by section with some settings being applied regardless of file format and some being file format specific. The default settings are meant to work out of the box but if you find that assets are not being created to your liking feel free to poke around in translator settings</p>
+<p>The most important setting you can change is Intermediate File Format. This plugin supports either fbx or usd files. You will see different results for each format because the structure of these files is very different. If you are having issues with USD or FBX try switching to the other format. </p>
+<p>If you have persistent issues hit up our discord for support. https://discord.gg/Zf8xSgg5</p>
+<h1 id="import-preview">Import Preview</h1>
+<p>Interchange comes with a preview panel that can be show by hitting preview. This shows you what will be imported if you hit import. In the image I posted a skeletal mesh is being imported with 2 materials and 2 animations.
+![[Pasted image 20250123181004.png]]</p>
+<p>The preview panel updates whenever translator or pipeline settings are changed and can be a fast way to see what will be imported. Clicking on any item will show more details about the item - some of which are human readable.</p>
+<h1 id="warnings">Warnings</h1>
+<ul>
+<li>Translator settings persist between imports. Make sure you reset any settings you change as it is possible to break blender export under some configurations. </li>
+<li>Translator settings cannot be saved to pipelines as of 5.5 like other settings</li>
+<li>Pipeline assets are not blueprints. You cannot create them through the new blueprint menu. You must create them as an asset by right clicking &gt; Misc &gt; Interchange Pipeline Asset</li>
+<li>Assets will be imported with the same pipeline settings on re-import. This is usually desired but something to keep in mind</li>
+</ul></div>
             </div>
         </div>
 
@@ -116,13 +152,13 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
         <script>
-            var base_url = ".",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js"></script>
-        <script src="search/main.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -187,8 +223,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.6.1
-Build Date UTC : 2025-01-24 00:26:39.585457+00:00
--->
