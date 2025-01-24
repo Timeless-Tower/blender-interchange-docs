@@ -1,4 +1,6 @@
-# Installing the plugin
+# Quickstart
+This is the quickstart guide for getting up and running as quickly as possible.
+# Install the Plugin
 You can install the plugin from [Fab](https://www.fab.com/) which is unreal engine's official marketplace. New versions of the plugin will be released shortly after each official engine with pre-releases available with proof of purchase in our company's discord. We're generally working off of the latest engine version so expect speedy updates.
 # Install Blender
 Install [blender](https://www.blender.org/download/) on your computer if you haven't already. You need installed on your blender to import blend files.
