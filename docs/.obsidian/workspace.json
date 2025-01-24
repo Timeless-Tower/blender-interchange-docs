@@ -1,0 +1,237 @@
+{
+  "main": {
+    "id": "88dbe73a7a421257",
+    "type": "split",
+    "children": [
+      {
+        "id": "b204d5fd3b714cc8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bbf2e28e216e1217",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Quickstart.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Quickstart"
+            }
+          },
+          {
+            "id": "0b7f049f22939875",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Importing Animations.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Importing Animations"
+            }
+          },
+          {
+            "id": "6d2e46427219f0b8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Export Fine Control.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Export Fine Control"
+            }
+          },
+          {
+            "id": "a4a84bce66ce5e0d",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Pictures/Pasted image 20250123180538.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20250123180538"
+            }
+          },
+          {
+            "id": "908234e257d608a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Importing Animations.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Importing Animations"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "21e9ecbbf7b85968",
+    "type": "split",
+    "children": [
+      {
+        "id": "1b77cc5f83f56170",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "df991ad5e6f89175",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "1bfb8c281fde5b0a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "3639a1a38f4df3af",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0bd988ac53e6b85a",
+    "type": "split",
+    "children": [
+      {
+        "id": "f13b0dbb3d289a4d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2268c84eafd45eb5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Importing Animations.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Importing Animations"
+            }
+          },
+          {
+            "id": "44dec58db9413a93",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Importing Animations.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Importing Animations"
+            }
+          },
+          {
+            "id": "8a61f7bff70fe590",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "e39c538079823dca",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Importing Animations.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Importing Animations"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "908234e257d608a2",
+  "lastOpenFiles": [
+    "Export Fine Control.md",
+    "Feature Chart.md",
+    "Pictures/Pasted image 20250123180538.png",
+    "Pictures/UnrealEditor_IMLIXxA0U8.png",
+    "Pictures/UnrealEditor_6Q2pVYfgEd.png",
+    "Quickstart.md",
+    "Pictures",
+    "index.md",
+    "Pictures/Pasted image 20250123181506.png",
+    "Importing Animations.md",
+    "Pictures/Pasted image 20250123181004.png",
+    "Pictures/UnrealEditor_G5XE1uXZvR.png",
+    "testpage.md",
+    "GettingStarted - Copy.md"
+  ]
+}
