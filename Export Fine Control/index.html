@@ -52,11 +52,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ms-md-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
                             <li class="nav-item">
                                 <a rel="prev" href=".." class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
@@ -120,23 +115,23 @@
 Translator Settings - How the blend file is exported from blender and how unreal translates the scene into file agnostic nodes </p>
 <h1 id="pipeline-settings">Pipeline Settings</h1>
 <p>This plugin ships with custom pipelines exposing more settings than unreal does out of the box. Pipelines allow you to control things like if meshes are merged into a single asset or imported as multiple separate assets. Each value can be reset to the pipeline default to by clicking the arrow on the left.</p>
-<p>![[Pasted image 20250123180538.png]]</p>
+<p><img alt="Pasted image 20250123180538.png" src="../Pictures/Pasted%20image%2020250123180538.png" /></p>
 <p>Each pipeline has it's own settings block which can be selected and configured separately. This plugin ships with folder creator pipeline that lets you separate assets in to folders based on their type.
-![[UnrealEditor_IMLIXxA0U8.png]]</p>
+<img alt="UnrealEditor_IMLIXxA0U8.png" src="../Pictures/UnrealEditor_IMLIXxA0U8.png" /></p>
 <p>Pipelines can be saved to assets in your content browser and will appear as a  dropdown after you add the pipeline as an option to the project settings. Project Settings &gt; Engine &gt; Interchange. Make sure you add the settings under the per-translator setting for the Blender Translator.<br />
-![[UnrealEditor_G5XE1uXZvR.png]]
+<img alt="UnrealEditor_G5XE1uXZvR.png" src="../Pictures/UnrealEditor_G5XE1uXZvR.png" />
 Once you do you should see an option appear under stack presets in the top-left corner of the import dialog.
-![[UnrealEditor_6Q2pVYfgEd.png]]</p>
+<img alt="UnrealEditor_6Q2pVYfgEd.png" src="../Pictures/UnrealEditor_6Q2pVYfgEd.png" /></p>
 <h1 id="translator-settings">Translator Settings</h1>
 <p>This plugin works by exporting either fbx or usd files from blender containing all of the information needed by unreal to create any assets. This is all done through blender's python API and some settings to control that process are exposed under translator settings.</p>
 <p>The settings can be opened by hitting the 3 dots in the top right. These settings are slightly hidden and likely to move post unreal engine 5.5. </p>
-<p>![[Pasted image 20250123181506.png]]</p>
+<p><img alt="Pasted image 20250123181506.png" src="../Pictures/Pasted%20image%2020250123181506.png" /></p>
 <p>The translator settings are laid out by section with some settings being applied regardless of file format and some being file format specific. The default settings are meant to work out of the box but if you find that assets are not being created to your liking feel free to poke around in translator settings</p>
 <p>The most important setting you can change is Intermediate File Format. This plugin supports either fbx or usd files. You will see different results for each format because the structure of these files is very different. If you are having issues with USD or FBX try switching to the other format. </p>
 <p>If you have persistent issues hit up our discord for support. https://discord.gg/Zf8xSgg5</p>
 <h1 id="import-preview">Import Preview</h1>
 <p>Interchange comes with a preview panel that can be show by hitting preview. This shows you what will be imported if you hit import. In the image I posted a skeletal mesh is being imported with 2 materials and 2 animations.
-![[Pasted image 20250123181004.png]]</p>
+<img alt="Pasted image 20250123181004.png" src="../Pictures/Pasted%20image%2020250123181004.png" /></p>
 <p>The preview panel updates whenever translator or pipeline settings are changed and can be a fast way to see what will be imported. Clicking on any item will show more details about the item - some of which are human readable.</p>
 <h1 id="warnings">Warnings</h1>
 <ul>
@@ -158,29 +153,8 @@ Once you do you should see an option appear under stack presets in the top-left 
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../js/base.js"></script>
-        <script src="../search/main.js"></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
