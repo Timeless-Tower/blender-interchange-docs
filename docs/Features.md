@@ -1,9 +1,11 @@
 # Features
-Blender Interchange translator supports the following imports from blender to unreal engine.
+
+Blender Interchange takes blend files and converts the blend file contents into individual assets. 
+The following asset types are supported from blender to unreal engine.
 
 | Feature                 | USD           | FBX           |
 | ----------------------- | ------------- | ------------- |
-| Static Meshses          | YES           | YES           |
+| Static Meshes           | YES           | YES           |
 | Skeletal Meshes         | YES           | YES           |
 | Materials               | Limited*      | Limited       |
 | Morph Targets           | YES**         | YES**         |

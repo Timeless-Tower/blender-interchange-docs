@@ -67,12 +67,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Quickstart.md",
+                "file": "Importing Animations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Quickstart"
+              "title": "Importing Animations"
             }
           }
         ],
@@ -148,7 +148,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Quickstart.md",
+                "file": "Importing Animations.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -158,7 +158,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Quickstart"
+              "title": "Backlinks for Importing Animations"
             }
           },
           {
@@ -167,12 +167,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Quickstart.md",
+                "file": "Importing Animations.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Quickstart"
+              "title": "Outgoing links from Importing Animations"
             }
           },
           {
@@ -194,10 +194,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Quickstart.md"
+                "file": "Importing Animations.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Quickstart"
+              "title": "Outline of Importing Animations"
             }
           }
         ]
@@ -219,11 +219,15 @@
   },
   "active": "908234e257d608a2",
   "lastOpenFiles": [
-    "Importing Animations.md",
-    "index.md",
-    "Export Fine Control.md",
+    "Pasted image 20250124205354.png",
+    "blender_SiwgCnk6VN.gif",
+    "Pasted image 20250124204352.png",
+    "Pasted image 20250124204127.png",
     "Features.md",
+    "Export Fine Control.md",
+    "index.md",
     "Quickstart.md",
+    "Importing Animations.md",
     "Pictures/Pasted image 20250123180538.png",
     "Pictures/UnrealEditor_IMLIXxA0U8.png",
     "Pictures/UnrealEditor_6Q2pVYfgEd.png",
