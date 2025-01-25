@@ -67,12 +67,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Importing Animations.md",
+                "file": "Quickstart.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Importing Animations"
+              "title": "Quickstart"
             }
           }
         ],
@@ -148,7 +148,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Importing Animations.md",
+                "file": "Quickstart.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -158,7 +158,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Importing Animations"
+              "title": "Backlinks for Quickstart"
             }
           },
           {
@@ -167,12 +167,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Importing Animations.md",
+                "file": "Quickstart.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Importing Animations"
+              "title": "Outgoing links from Quickstart"
             }
           },
           {
@@ -194,10 +194,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Importing Animations.md"
+                "file": "Quickstart.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Importing Animations"
+              "title": "Outline of Quickstart"
             }
           }
         ]
@@ -219,22 +219,23 @@
   },
   "active": "908234e257d608a2",
   "lastOpenFiles": [
-    "Pasted image 20250124205354.png",
-    "blender_SiwgCnk6VN.gif",
-    "Pasted image 20250124204352.png",
-    "Pasted image 20250124204127.png",
+    "UnrealEditor_OR8ZVjuN1l.png",
+    "Pasted image 20250124221436.png",
+    "UnrealEditor_QCr8u4aaOQ.png",
+    "Pasted image 20250124221307.png",
     "Features.md",
-    "Export Fine Control.md",
-    "index.md",
     "Quickstart.md",
+    "UnrealEditor_IBYj70lrvc.gif",
+    "UnrealEditor_4rQldxtwXI.gif",
+    "blender_gEln2YeFzs.gif",
+    "Export Fine Control.md",
     "Importing Animations.md",
-    "Pictures/Pasted image 20250123180538.png",
-    "Pictures/UnrealEditor_IMLIXxA0U8.png",
-    "Pictures/UnrealEditor_6Q2pVYfgEd.png",
+    "YvOR9kUIEm.png",
+    "Pasted image 20250124214441.png",
+    "blender_pBER6uOeMM.png",
+    "UnrealEditor_S9wl8aZ90f.png",
+    "index.md",
     "Pictures",
-    "Pictures/Pasted image 20250123181506.png",
-    "Pictures/Pasted image 20250123181004.png",
-    "Pictures/UnrealEditor_G5XE1uXZvR.png",
     "testpage.md",
     "GettingStarted - Copy.md"
   ]
