@@ -84,6 +84,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#notes" class="nav-link">Notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -128,18 +133,23 @@ The following asset types are supported from blender to unreal engine.</p>
 </tr>
 <tr>
 <td>Morph Target Animations</td>
-<td>YES**</td>
-<td>YES**</td>
+<td>YES</td>
+<td>YES</td>
 </tr>
 <tr>
 <td>Static Mesh Animations</td>
-<td>YES**</td>
-<td>YES**</td>
+<td>YES</td>
+<td>YES</td>
 </tr>
 <tr>
 <td>Levels</td>
-<td>Planned***</td>
-<td>Planned***</td>
+<td>Planned**</td>
+<td>Planned**</td>
+</tr>
+<tr>
+<td>Reimport</td>
+<td>YES</td>
+<td>YES</td>
 </tr>
 <tr>
 <td>*Materials are created and assigned but will not match any complex material graph created in blender. It is recommended to create materials in unreal separately using unreal's material graph. USD supports MaterialX which is a generic way of exporting material graph information. As of time of writing unreal and blender seem to have limitted support for materialX but supporting material transfer is planned in the future</td>
@@ -148,8 +158,10 @@ The following asset types are supported from blender to unreal engine.</p>
 </tr>
 </tbody>
 </table>
-<p>** Certain features require you to apply our plugin's settings to your project. If this feature is not working refer to QuickStart</p>
-<p>*** Level import is planned for a future release. The current focus is on individual assets in the content browser. In the meantime you can sync your blend scene using something like unreal's USD stage actor. In the future we will support creating level instances from blend files.</p></div>
+<p>** Level import is planned for a future release. The current focus is on individual assets in the content browser. In the meantime you can sync your blend scene using something like unreal's USD stage actor. In the future we will support creating level instances from blend files.</p>
+<h1 id="notes">Notes</h1>
+<p>Certain features require you to apply our plugin's settings to your project. If this feature is not working refer to QuickStart</p>
+<p>Reimport has been observed to have some issues compared to fresh import. If you experience issues with unreal's reimport context menu you can simply drag the blend file back into the import folder and override the assets. This has been found to be more consistent.</p></div>
             </div>
         </div>
 
