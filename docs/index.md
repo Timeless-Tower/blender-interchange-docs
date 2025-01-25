@@ -1,6 +1,10 @@
 # Welcome
 This is the user guide for blender interchange - a tool for importing data from blender into Unreal Engine 5 as simply as possible. With this tool you can import .blend files by simply dragging and dropping them into the content browser. No more fiddling with export settings and manual export processes. 
 
+![[UnrealEditor_IBYj70lrvc.gif]]
+
+Our goal is to support a seamless transfer of assets from blender to unreal while still offering fine control. We have implemented support for a wide variety of different [[Importing Animations|meshes types and animations]]. If you're ready to get started check out our [[Quickstart|quickstart guide]]
+
 # Why Interchange?
 Blender Interchange is built on top of Unreal Engine's Interchange framework - which is becoming the new standard for importing content in the engine as of the 5.5 release. 
 

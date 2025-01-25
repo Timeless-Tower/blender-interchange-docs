@@ -33,4 +33,4 @@ You can now import blend files just like any other file. As you can see it's as 
 ![[UnrealEditor_IBYj70lrvc.gif]]
 
 
-The full list of features can be found [[Features|here]].
+The full list of features can be found [[Features|here]]. If you would like to see the files we are using to test this plugin and compare setups you can view our [sample repository](https://github.com/Timeless-Tower/blender-interchange-samples).

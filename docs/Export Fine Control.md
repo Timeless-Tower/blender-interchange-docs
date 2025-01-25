@@ -29,6 +29,8 @@ The translator settings are laid out by section with some settings being applied
 
 The most important setting you can change is Intermediate File Format. This plugin supports either fbx or usd files. You will see different results for each format because the structure of these files is very different. If you are having issues with USD or FBX try switching to the other format. 
 
+Another very useful setting is Collection Filter. This will limit what is exported to a list of collections in blender since there is often stuff in the blend file you do not want or need in unreal. In the image above I have set the collection filter to just the Export collection. 
+
 If you have persistent issues hit up our discord for support. https://discord.gg/Zf8xSgg5
 # Import Preview
 Interchange comes with a preview panel that can be show by hitting preview. This shows you what will be imported if you hit import. In the image I posted a skeletal mesh is being imported with 2 materials and 2 animations.
@@ -36,7 +38,8 @@ Interchange comes with a preview panel that can be show by hitting preview. This
 
 The preview panel updates whenever translator or pipeline settings are changed and can be a fast way to see what will be imported. Clicking on any item will show more details about the item - some of which are human readable.
 # Warnings
-- Translator settings persist between imports. Make sure you reset any settings you change as it is possible to break blender export under some configurations. 
+- Translator settings persist between imports. Make sure you remember any settings you change. For example you may want to remember set your collection filter to "Export" if you import a file without that collection. 
 - Translator settings cannot be saved to pipelines as of 5.5 like other settings
+- Translator settings expose some of blender's fbx or usd dialog options in unreal. It is possible to break the export from blender under some setting permutations so it's advised to proceed with caution.
 - Pipeline assets are not blueprints. You cannot create them through the new blueprint menu. You must create them as an asset by right clicking > Misc > Interchange Pipeline Asset
 - Assets will be imported with the same pipeline settings on re-import. This is usually desired but something to keep in mind
