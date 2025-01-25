@@ -128,6 +128,7 @@ Once you do you should see an option appear under stack presets in the top-left 
 <p><img alt="Pasted image 20250123181506.png" src="../Pictures/Pasted%20image%2020250123181506.png" /></p>
 <p>The translator settings are laid out by section with some settings being applied regardless of file format and some being file format specific. The default settings are meant to work out of the box but if you find that assets are not being created to your liking feel free to poke around in translator settings</p>
 <p>The most important setting you can change is Intermediate File Format. This plugin supports either fbx or usd files. You will see different results for each format because the structure of these files is very different. If you are having issues with USD or FBX try switching to the other format. </p>
+<p>Another very useful setting is Collection Filter. This will limit what is exported to a list of collections in blender since there is often stuff in the blend file you do not want or need in unreal. In the image above I have set the collection filter to just the Export collection. </p>
 <p>If you have persistent issues hit up our discord for support. https://discord.gg/Zf8xSgg5</p>
 <h1 id="import-preview">Import Preview</h1>
 <p>Interchange comes with a preview panel that can be show by hitting preview. This shows you what will be imported if you hit import. In the image I posted a skeletal mesh is being imported with 2 materials and 2 animations.
@@ -135,8 +136,9 @@ Once you do you should see an option appear under stack presets in the top-left 
 <p>The preview panel updates whenever translator or pipeline settings are changed and can be a fast way to see what will be imported. Clicking on any item will show more details about the item - some of which are human readable.</p>
 <h1 id="warnings">Warnings</h1>
 <ul>
-<li>Translator settings persist between imports. Make sure you reset any settings you change as it is possible to break blender export under some configurations. </li>
+<li>Translator settings persist between imports. Make sure you remember any settings you change. For example you may want to remember set your collection filter to "Export" if you import a file without that collection. </li>
 <li>Translator settings cannot be saved to pipelines as of 5.5 like other settings</li>
+<li>Translator settings expose some of blender's fbx or usd dialog options in unreal. It is possible to break the export from blender under some setting permutations so it's advised to proceed with caution.</li>
 <li>Pipeline assets are not blueprints. You cannot create them through the new blueprint menu. You must create them as an asset by right clicking &gt; Misc &gt; Interchange Pipeline Asset</li>
 <li>Assets will be imported with the same pipeline settings on re-import. This is usually desired but something to keep in mind</li>
 </ul></div>
