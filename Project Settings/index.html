@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Features - Blender-Interchange-Documentation</title>
+        <title>Project Settings - Blender-Interchange-Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -41,13 +41,13 @@
                                 <a href="../Export%20Fine%20Control/" class="nav-link">Export Fine Control</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">Features</a>
+                                <a href="../Features/" class="nav-link">Features</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../Importing%20Animations/" class="nav-link">Importing Animations</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../Project%20Settings/" class="nav-link">Project Settings</a>
+                                <a href="./" class="nav-link active" aria-current="page">Project Settings</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../Quickstart/" class="nav-link">Quickstart</a>
@@ -56,12 +56,12 @@
 
                     <ul class="nav navbar-nav ms-md-auto">
                             <li class="nav-item">
-                                <a rel="prev" href="../Export%20Fine%20Control/" class="nav-link">
+                                <a rel="prev" href="../Importing%20Animations/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../Importing%20Animations/" class="nav-link">
+                                <a rel="next" href="../Quickstart/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -83,12 +83,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#features" class="nav-link">Features</a>
+            <li class="nav-item" data-bs-level="1"><a href="#project-settings" class="nav-link">Project Settings</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#notes" class="nav-link">Notes</a>
+            <li class="nav-item" data-bs-level="1"><a href="#extra-step-blender-path" class="nav-link">Extra Step - Blender Path</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#extra-step-studio-setup" class="nav-link">Extra Step - Studio Setup</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -97,73 +102,25 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="features">Features</h1>
-<p>Blender Interchange takes blend files and converts the blend file contents into individual assets. 
-The following asset types are supported from blender to unreal engine.</p>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>USD</th>
-<th>FBX</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Static Meshes</td>
-<td>YES</td>
-<td>YES</td>
-</tr>
-<tr>
-<td>Skeletal Meshes</td>
-<td>YES</td>
-<td>YES</td>
-</tr>
-<tr>
-<td>Materials</td>
-<td>Limited*</td>
-<td>Limited</td>
-</tr>
-<tr>
-<td>Morph Targets</td>
-<td>YES**</td>
-<td>YES**</td>
-</tr>
-<tr>
-<td>Skeletal Animations</td>
-<td>YES</td>
-<td>YES</td>
-</tr>
-<tr>
-<td>Morph Target Animations</td>
-<td>YES</td>
-<td>YES</td>
-</tr>
-<tr>
-<td>Static Mesh Animations</td>
-<td>YES</td>
-<td>YES</td>
-</tr>
-<tr>
-<td>Levels</td>
-<td>Planned**</td>
-<td>Planned**</td>
-</tr>
-<tr>
-<td>Reimport</td>
-<td>YES</td>
-<td>YES</td>
-</tr>
-<tr>
-<td>*Materials are created and assigned but will not match any complex material graph created in blender. It is recommended to create materials in unreal separately using unreal's material graph. USD supports MaterialX which is a generic way of exporting material graph information. As of time of writing unreal and blender seem to have limitted support for materialX but supporting material transfer is planned in the future</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>** Level import is planned for a future release. The current focus is on individual assets in the content browser. In the meantime you can sync your blend scene using something like unreal's USD stage actor. In the future we will support creating level instances from blend files.</p>
-<h1 id="notes">Notes</h1>
-<p>When reimporting it's recommended that you right click on the asset(s) you want to reimport and select reimport. You may also drag the asset into unreal again and override it, but this may cause issues with overriding materials and other work done in unreal since it's overriding and not reimporting.</p></div>
+<h1 id="project-settings">Project Settings</h1>
+<p>Interchange stores pipeline settings in your project settings under 
+Engine Settings &gt; Engine &gt; Interchange</p>
+<p>Open up it up here then browse to Interchange under then Engine section to verify your settings.
+<img alt="Pasted image 20250124221307.png" src="../Pictures/Pasted%20image%2020250124221307.png" /></p>
+<p>Looking at the project settings, they should include blender specific pipelines giving the plugin better control than the out of the box settings allow. Without these pipelines you may find that some assets do not import as expected
+<img alt="UnrealEditor_OR8ZVjuN1l.png" src="../Pictures/UnrealEditor_OR8ZVjuN1l.png" /></p>
+<p>This automation expects your project to have the following pipelines. It will not work without them.
+- Assets
+- Materials
+- Textures</p>
+<p>If you have a custom pipeline setup with different pipelines and stack names, you can manually add the blender interchange pipelines as show above. You can also duplicate one of your pipelines name it "Assets" then rerun the script manually from the Interchange (Blender) section of the settings. Hitting this button is similar to restarting the editor.</p>
+<p><img alt="UnrealEditor_QCr8u4aaOQ.png" src="../Pictures/UnrealEditor_QCr8u4aaOQ.png" /></p>
+<p><img alt="Pasted image 20250124221436.png" src="../Pictures/Pasted%20image%2020250124221436.png" /></p>
+<h1 id="extra-step-blender-path">Extra Step - Blender Path</h1>
+<p>If you don't explicitly set a path for your computers blender installation, the path will be deduced and the latest version found will be used. If you are experiencing issues or would like a specific version of blender used you can set the path to blender here.</p>
+<p>You can also view and edit which paths are being searched for blend files. These paths vary per operating systems.</p>
+<h1 id="extra-step-studio-setup">Extra Step - Studio Setup</h1>
+<p>Interchange settings are PerUserProjectSettings. What that means is that they are not checked in version control and each user can have their own individual settings. If you would like every user to use the same default settings you can apply your local settings by clicking the button in the top-right corner. </p></div>
             </div>
         </div>
 
