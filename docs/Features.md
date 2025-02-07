@@ -19,6 +19,4 @@ The following asset types are supported from blender to unreal engine.
 \*\* Level import is planned for a future release. The current focus is on individual assets in the content browser. In the meantime you can sync your blend scene using something like unreal's USD stage actor. In the future we will support creating level instances from blend files.
 
 # Notes
-Certain features require you to apply our plugin's settings to your project. If this feature is not working refer to QuickStart
-
-Reimport has been observed to have some issues compared to fresh import. If you experience issues with unreal's reimport context menu you can simply drag the blend file back into the import folder and override the assets. This has been found to be more consistent.
+When reimporting it's recommended that you right click on the asset(s) you want to reimport and select reimport. You may also drag the asset into unreal again and override it, but this may cause issues with overriding materials and other work done in unreal since it's overriding and not reimporting.
