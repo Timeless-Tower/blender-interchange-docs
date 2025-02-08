@@ -102,6 +102,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#older-versions-of-blender" class="nav-link">Older Versions of Blender</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -113,12 +118,15 @@
 <p>You can install the plugin from <a href="https://www.fab.com/">Fab</a> which is unreal engine's official marketplace. New versions of the plugin will be released shortly after each official engine with pre-releases available with proof of purchase in our company's discord. We're generally working off of the latest engine version so expect speedy updates.</p>
 <h1 id="install-blender">Install Blender</h1>
 <p>Install <a href="https://www.blender.org/download/">blender</a> on your computer if you haven't already. You need installed on your blender to import blend files.</p>
-<p>This plugin was designed for the newest version of blender (4.3 at time of writing) and will be updated for all new version of blender. It is backwards compatible to Blender 3.0 but it is recommended you use the latest version if possible to use the latest blender exporters.</p>
-<p>You can set unreal to use a specific version of blender under Edit &gt; Project Settings &gt; Engine &gt; Interchange (Blender). If no path is specified it will search a set of specified paths where blender is usually installed and try to use the latest version of blender found. You can modify the paths that are searched for in the settings.</p>
+<p>This plugin was designed for the newest version of blender (4.3 at time of writing) and will be updated for all new version of blender. It is backwards compatible to some extent and is likely forwards compatible. See note at end.</p>
 <h1 id="importing">Importing</h1>
 <p>You can now import blend files just like any other file. As you can see it's as simple as dragging the file you want. No more fiddling with nobs. Just drag and drop and continue making your game.
 <img alt="UnrealEditor_IBYj70lrvc.gif" src="../Pictures/UnrealEditor_IBYj70lrvc.gif" /></p>
-<p>The full list of features can be found <a href="../Features/">here</a>. If you would like to see the files we are using to test this plugin and compare setups you can view our <a href="https://github.com/Timeless-Tower/blender-interchange-samples">sample repository</a>.</p></div>
+<p>The full list of features can be found <a href="../Features/">here</a>. If you would like to see the files we are using to test this plugin and compare setups you can view our <a href="https://github.com/Timeless-Tower/blender-interchange-samples">sample repository</a>.</p>
+<h1 id="older-versions-of-blender">Older Versions of Blender</h1>
+<p>This plugin has been backported back to 3.0 and can actually be used for versions as far back as 2.80 if you change the translator settings to use fbx as the intermediate file type to extract information from blender.</p>
+<p>If you use an older version of blender you may see discrepancies not present with the latest version of blender. Older versions of blender have less advanced exporters for fbx and usd which is used to extract information from unreal engine. It's worth upgrading to the newest version of blender if you are able to. </p>
+<p>You can set unreal to use a specific version of blender under Edit &gt; Project Settings &gt; Engine &gt; Interchange (Blender). If no path is specified it will search a set of specified paths where blender is usually installed and try to use the latest version of blender found. You can modify the paths that are searched for in the settings.</p></div>
             </div>
         </div>
 
