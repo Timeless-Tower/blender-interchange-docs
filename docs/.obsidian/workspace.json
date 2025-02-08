@@ -81,12 +81,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Features.md",
+                "file": "Quickstart.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Features"
+              "title": "Quickstart"
             }
           }
         ],
@@ -162,7 +162,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Features.md",
+                "file": "Quickstart.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -172,7 +172,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Features"
+              "title": "Backlinks for Quickstart"
             }
           },
           {
@@ -181,12 +181,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Features.md",
+                "file": "Quickstart.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Features"
+              "title": "Outgoing links from Quickstart"
             }
           },
           {
@@ -208,10 +208,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Features.md"
+                "file": "Quickstart.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Features"
+              "title": "Outline of Quickstart"
             }
           }
         ]
@@ -233,12 +233,12 @@
   },
   "active": "acd8134f40bfe439",
   "lastOpenFiles": [
-    "Quickstart.md",
     "Project Settings.md",
-    "Export Fine Control.md",
-    "Features.md",
-    "index.md",
     "Importing Animations.md",
+    "Features.md",
+    "Quickstart.md",
+    "Export Fine Control.md",
+    "index.md",
     "Pictures/UnrealEditor_4rQldxtwXI.gif",
     "Pictures/Pasted image 20250124204127.png",
     "Pictures/blender_6xTJiQhiTL.gif",
