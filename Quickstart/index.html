@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>FAQ - Blender-Interchange-Documentation</title>
+        <title>Quickstart - Blender-Interchange-Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
                                 <a href="../Export%20Fine%20Control/" class="nav-link">Export Fine Control</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">FAQ</a>
+                                <a href="../FAQ/" class="nav-link">FAQ</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../Features/" class="nav-link">Features</a>
@@ -53,18 +53,18 @@
                                 <a href="../Project%20Settings/" class="nav-link">Project Settings</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../Quickstart/" class="nav-link">Quickstart</a>
+                                <a href="./" class="nav-link active" aria-current="page">Quickstart</a>
                             </li>
                         </ul>
 
                     <ul class="nav navbar-nav ms-md-auto">
                             <li class="nav-item">
-                                <a rel="prev" href="../Export%20Fine%20Control/" class="nav-link">
+                                <a rel="prev" href="../Project%20Settings/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../Features/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -86,27 +86,27 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#faq" class="nav-link">FAQ</a>
+            <li class="nav-item" data-bs-level="1"><a href="#quickstart" class="nav-link">Quickstart</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#how-do-i-re-import-an-asset-after-ive-imported-it-with-the-plugin" class="nav-link">How do I re-import an asset after I've imported it with the Plugin</a>
+            <li class="nav-item" data-bs-level="1"><a href="#install-the-plugin" class="nav-link">Install the Plugin</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#how-do-i-change-import-settings-when-reimporting-it-just-imports-with-no-dialog" class="nav-link">How do I change Import settings when Reimporting? It just imports with no dialog</a>
+            <li class="nav-item" data-bs-level="1"><a href="#install-blender" class="nav-link">Install Blender</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#can-i-just-drag-an-asset-into-the-content-browser-again" class="nav-link">Can I just drag an asset into the content browser again?</a>
+            <li class="nav-item" data-bs-level="1"><a href="#importing" class="nav-link">Importing</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#should-i-create-the-material-in-blender-or-unreal-how-do-i-change-materials" class="nav-link">Should I create the material in Blender or Unreal? How do I change materials?</a>
+            <li class="nav-item" data-bs-level="1"><a href="#older-versions-of-blender" class="nav-link">Older Versions of Blender</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -115,22 +115,23 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="faq">FAQ</h1>
-<h1 id="how-do-i-re-import-an-asset-after-ive-imported-it-with-the-plugin">How do I re-import an asset after I've imported it with the Plugin</h1>
-<p>Assets remember which file path was used to import. You can see the file path by opening up the mesh, material, or other asset and looking for filepath.</p>
-<p>To re-import the asset simply right click the asset and select Reimport. This will reimport it with the same file that was used to import the asset. You can also select the "Reimport with New File" if the source mesh moved file location. An example is if you imported multiple assets from a single file, then later split the blend file into separate files for each asset you can re-import with the new file.</p>
-<h1 id="how-do-i-change-import-settings-when-reimporting-it-just-imports-with-no-dialog">How do I change Import settings when Reimporting? It just imports with no dialog</h1>
-<p>By default interchange will not show an interchange dialog when re-importing an asset. This is usually convenient, because usually using the same settings is sufficient. However, it is easy to show the dialog and change settings if desired.</p>
-<p>In the unreal editor you can enable "Show Import Dialog at Reimport" under the following menu.
-File &gt; Editor Settings &gt; General &gt; Interchange</p>
-<p>Note that Interchange also has other settings under Project Settings (also under Interchange)</p>
-<p>Also note that the static mesh editor has a button in the top left : "Reimport Mesh with Dialog". It's possible to use that as well.</p>
-<h1 id="can-i-just-drag-an-asset-into-the-content-browser-again">Can I just drag an asset into the content browser again?</h1>
-<p>Yes you can. It will import the asset over the old one, which can be fine in some cases. Note that if you changed the material or some other set up it's likely that importing an asset over the old one will recreate the original material or other undesired behavior.</p>
-<h1 id="should-i-create-the-material-in-blender-or-unreal-how-do-i-change-materials">Should I create the material in Blender or Unreal? How do I change materials?</h1>
-<p>In general it is recommended that you assign materials in blender but author the final material in unreal. This is for a few reasons.</p>
-<p>Unreal has a completely separate material graph. If you want materials to fit your game, it is best to author a master material in unreal and use material instances for any game assets you import. Blender material nodes and unreal material nodes are generally not a 1-1 mapping and work done making shaders in Blender will not be transferable to Unreal. Feel free to try and create preview materials in blender.</p>
-<p>In the future this plugin may be extended to more easily transfer material setups from unreal to blender. There are also plans to use USD's MaterialX to better import blender materials as they were authored. For now the best solution is to assign each mesh a material made in Unreal Engine. Simply create the material in unreal then assign it in the static mesh editor. Future re-imports of this mesh will not override the material change. After the material is assigned you can safely delete the original material. </p></div>
+<h1 id="quickstart">Quickstart</h1>
+<p>This is the quickstart guide for getting up and running as quickly as possible.</p>
+<h1 id="install-the-plugin">Install the Plugin</h1>
+<p>You can install the plugin from <a href="https://www.fab.com/listings/c719cc60-e69d-4567-be89-8744c52744a4">Fab</a> which is unreal engine's official marketplace. New versions of the plugin will be released shortly after each official engine with pre-releases available with proof of purchase in our company's discord. We're generally working off of the latest engine version so expect speedy updates.</p>
+<p>The discord can be found here!
+https://discord.gg/w2vqa4fZ7Z</p>
+<h1 id="install-blender">Install Blender</h1>
+<p>Install <a href="https://www.blender.org/download/">blender</a> on your computer if you haven't already. You need installed on your blender to import blend files.</p>
+<p>This plugin was designed for the newest version of blender (4.3 at time of writing) and will be updated for all new version of blender. It is backwards compatible to some extent and is likely forwards compatible. See note at end.</p>
+<h1 id="importing">Importing</h1>
+<p>You can now import blend files just like any other file. As you can see it's as simple as dragging the file you want. No more fiddling with nobs. Just drag and drop and continue making your game.
+<img alt="UnrealEditor_IBYj70lrvc.gif" src="../Pictures/UnrealEditor_IBYj70lrvc.gif" /></p>
+<p>The full list of features can be found <a href="../Features/">here</a>. If you would like to see the files we are using to test this plugin and compare setups you can view our <a href="https://github.com/Timeless-Tower/blender-interchange-samples">sample repository</a>.</p>
+<h1 id="older-versions-of-blender">Older Versions of Blender</h1>
+<p>This plugin has been backported back to 3.0 and can actually be used for versions as far back as 2.80 if you change the translator settings to use fbx as the intermediate file type to extract information from blender.</p>
+<p>If you use an older version of blender you may see discrepancies not present with the latest version of blender. Older versions of blender have less advanced exporters for fbx and usd which is used to extract information from unreal engine. It's worth upgrading to the newest version of blender if you are able to. </p>
+<p>You can set unreal to use a specific version of blender under Edit &gt; Project Settings &gt; Engine &gt; Interchange (Blender). If no path is specified it will search a set of specified paths where blender is usually installed and try to use the latest version of blender found. You can modify the paths that are searched for in the settings.</p></div>
             </div>
         </div>
 
