@@ -193,14 +193,9 @@ The following asset types are supported from blender to unreal engine.</p>
 <td>YES</td>
 <td>YES</td>
 </tr>
-<tr>
-<td>*Materials are created and assigned but will not match any complex material graph created in blender. It is recommended to create materials in unreal separately using unreal's material graph. USD supports MaterialX which is a generic way of exporting material graph information. As of time of writing unreal and blender seem to have limitted support for materialX but supporting material transfer is planned in the future.</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<p>*Materials are created and assigned but will not match any complex material graph created in blender. It is recommended to create materials in unreal separately using unreal's material graph. USD supports MaterialX which is a generic way of exporting material graph information. As of time of writing unreal and blender seem to have limitted support for materialX but supporting material transfer is planned in the future.</p>
 <p>** USD imports duplicates due to blender exporting duplicates and generally not supported advanced USD exports as of Blender 5.0</p>
 <h1 id="a-note-on-fbx">A Note on FBX</h1>
 <p>FBX can be a bit finicky. One thing to watch out for when importing FBX is that the name of the mesh asset is used instead of the instance in the blender scene which is what you might expect. Make sure to properly name each mesh in your scene appropriately.</p>
@@ -213,8 +208,8 @@ The following asset types are supported from blender to unreal engine.</p>
 <p>https://discord.gg/fc2HYwJS</p>
 <h1 id="a-second-note-on-fbx">A Second Note on FBX</h1>
 <p>The above issue can actually cause a lot of issues if you have multiple meshes in your scene that all started from the same primitive or were duplicated.</p>
-<p>This looks like it will import 2 meshes but it will only import 1 and throw away the other one. FBX ignores the bit after the dot so it will just see Cylinder twice.
-<img alt="FBXOtherIssue.png" src="../Pictures/FBXOtherIssue.png" /></p>
+<p>This looks like it will import 2 meshes but it will only import 1 and throw away the other one. FBX ignores the bit after the dot so it will just see Cylinder twice.</p>
+<p><img alt="FBXOtherIssue.png" src="../Pictures/FBXOtherIssue.png" /></p>
 <p>It's worth noting that we recommend using the default file format of GLTF to avoid issues like this with FBX.</p></div>
             </div>
         </div>
