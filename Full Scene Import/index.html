@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Full Scene Import - Blender-Interchange-Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Blender-Interchange-Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Welcome</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Animations%20Import/" class="nav-link">Animations Import</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Collision%20Import/" class="nav-link">Collision Import</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../FAQ/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Features/" class="nav-link">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Full Scene Import</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Import%20Settings/" class="nav-link">Import Settings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Importing%20LODs/" class="nav-link">Importing LODs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Project%20Settings/" class="nav-link">Project Settings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Quickstart/" class="nav-link">Quickstart</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                            <li class="nav-item">
+                                <a rel="prev" href="../Features/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Import%20Settings/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#full-scene-import" class="nav-link">Full Scene Import</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#importing-the-scene" class="nav-link">Importing the Scene</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#packed-level-actors" class="nav-link">Packed Level Actors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#pcg-level-data" class="nav-link">PCG Level Data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#importing-a-level-with-assets-already-in-the-project" class="nav-link">Importing a Level with Assets Already in the Project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#caveots" class="nav-link">Caveots</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="full-scene-import">Full Scene Import</h2>
+<p>Blender Interchange supports importing entire scenes from blender as level instances. This is generally recommended for static geometry used for environments. Skeletal meshes are not supported for scene import since skeletal meshes have issues when not exported at the origin from blender.</p>
+<p>If you run into any issues please reach out on our discord and hopefully we can work you through your issue. 
+https://discord.gg/fc2HYwJS</p>
+<h2 id="importing-the-scene">Importing the Scene</h2>
+<p>The scene import button is a bit hidden in Unreal Engine. Dragging and dropping into the content browser will not give you the option to import a blender file as a scene. In this example I am using simple geometric shapes for simplicity but you can also import complex scenes to good results.</p>
+<p>This is the scene I will be importing. I used simple shapes with some distinct features to show that objects and materials are imported correctly.
+<img alt="BlenderSimpleScene.png" src="../Pictures/BlenderSimpleScene.png" /></p>
+<p>Instead you need to find it under File &gt;  Import into Level... in the top left</p>
+<p><img alt="ImportIntoLevelFileOption.png" src="../Pictures/ImportIntoLevelFileOption.png" /></p>
+<p>Once you hit that option you will be presented with a file select dialog where you can select your blender file</p>
+<p>After selecting your file you need to select which folder to create the assets in. Once the import finishes it will create meshes and materials the same as if you had dragged it into the content browser
+<img alt="ContentImportDialog.png" src="../Pictures/ContentImportDialog.png" /></p>
+<p>Click through the import dialog like before. You can change options just as you would a normal asset import into the content browser.
+<img alt="SceneImportDialog.png" src="../Pictures/SceneImportDialog.png" /></p>
+<p>This is what the scene looks like after import. You should see something similar. Notice that duplicate instances share a mesh if they were set up that way in blender. So if you have a wooden fence made out of 1000 boards you will import 1 board mesh instead of 1000 unique boards.</p>
+<p><img alt="Pasted image 20251119211016.png" src="../Pictures/Pasted%20image%2020251119211016.png" /></p>
+<h1 id="packed-level-actors">Packed Level Actors</h1>
+<p>You may want to create a packed level actor instead of a vanilla level instance. You can set this option under the Scene Hierarchy Type under level instance data to create a packed level actor from the level instance. Packed level instances use ISMs to render geometry instead of individual actors and can be more performant for environment art for example.</p>
+<p><img alt="SceneLevelPipeline.png" src="../Pictures/SceneLevelPipeline.png" /></p>
+<h1 id="pcg-level-data">PCG Level Data</h1>
+<p>PCG data can also be created by a level instance to be plugged into unreal's PCG system. Currently it is not an option to automatically create PCG data in the import dialog. You can right click the level instance after it's created to create PCG data though as an added step.  </p>
+<p>Let us know if this is a feature you would want in our discord. Our studio heavily uses PCG and can provide support on this.
+https://discord.gg/fc2HYwJS</p>
+<h1 id="importing-a-level-with-assets-already-in-the-project">Importing a Level with Assets Already in the Project</h1>
+<p>You may find that you want to import a scene composed of other assets in your project. This can be for a few reasons:
+1. You want to import LODs and simple collision for those assets which would not work with scene import but would work well importing each asset as a separate blend file.
+2. You have already imported these assets and don't want to reimport over your local changes.</p>
+<p>While this is slightly more involved than a clean scene import there is a way to do this. First you must put all the meshes that the scene will import in the same location. </p>
+<p>Here I've used the same example as last time. However I have given the cone a material change. I could have also imported this separately to import collision or LODs. I could have also messed with it's nanite build settings.  Every other asset is the same.</p>
+<p><img alt="Pasted image 20251123140017.png" src="../Pictures/Pasted%20image%2020251123140017.png" /></p>
+<p>To import the scene using this modified cone simply start the level import like before using File &gt; Import into Level. Select the folder containing your assets and you will get a warningpopup. Be sure to select "No"! We do not want to convert to a reimport.</p>
+<p><img alt="ReimportPopup.png" src="../Pictures/ReimportPopup.png" /></p>
+<p>Click through the reimport dialog as before. Note that we will not be overriding the assets so be assured. 
+<img alt="SceneImportDialog.png" src="../Pictures/SceneImportDialog.png" /></p>
+<p>After hitting import you will get a second dialog asking if you want to override each asset.
+<img alt="SecondPopup.png" src="../Pictures/SecondPopup.png" /></p>
+<h1 id="caveots">Caveots</h1>
+<p>Current GLTF is the recommend format for importing full scenes. Fbx will also work but will likely look a bit worse.</p>
+<p>It is noted that USD will not work well with duplicate instances and will create one mesh per instance. This is because Blender does not have support for instancing as of Blender 5.0 and creates copies even if 2 mesh instances share a model in blender. As of the time of writing at the end of 2025, the USD file format is not that well supported by both Unreal Engine and Blender. Hopefully support for features like instancing and MaterialX will improve on both sides.</p>
+<p>Make sure your translator does not have "Export Static Meshes Local" enabled. This will put all meshes at the origin. </p>
+<p><img alt="ExportStaticMeshesLocalSpace.png" src="../Pictures/ExportStaticMeshesLocalSpace.png" /></p>
+<p>If you are running into issues and don't know what is the issue I would recommend hitting "Use Pipeline Defaults" to make sure you are using settings that have been tested. Not all combinations of settings available in interchange will result in good scene import but the defaults that ship with the plugin have been shown to work.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

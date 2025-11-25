@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>FAQ - Blender-Interchange-Documentation</title>
+        <title>Importing LODs - Blender-Interchange-Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -44,7 +44,7 @@
                                 <a href="../Collision%20Import/" class="nav-link">Collision Import</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">FAQ</a>
+                                <a href="../FAQ/" class="nav-link">FAQ</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../Features/" class="nav-link">Features</a>
@@ -56,7 +56,7 @@
                                 <a href="../Import%20Settings/" class="nav-link">Import Settings</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../Importing%20LODs/" class="nav-link">Importing LODs</a>
+                                <a href="./" class="nav-link active" aria-current="page">Importing LODs</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../Project%20Settings/" class="nav-link">Project Settings</a>
@@ -68,12 +68,12 @@
 
                     <ul class="nav navbar-nav ms-md-auto">
                             <li class="nav-item">
-                                <a rel="prev" href="../Collision%20Import/" class="nav-link">
+                                <a rel="prev" href="../Import%20Settings/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../Features/" class="nav-link">
+                                <a rel="next" href="../Project%20Settings/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -95,32 +95,37 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#faq" class="nav-link">FAQ</a>
+            <li class="nav-item" data-bs-level="1"><a href="#importing-lods" class="nav-link">Importing LODs</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#how-do-i-re-import-an-asset-after-ive-imported-it-with-the-plugin" class="nav-link">How do I re-import an asset after I've imported it with the Plugin</a>
+            <li class="nav-item" data-bs-level="1"><a href="#lod-overview" class="nav-link">LOD Overview</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#how-do-i-change-import-settings-when-reimporting-it-just-imports-with-no-dialog" class="nav-link">How do I change Import settings when Reimporting? It just imports with no dialog</a>
+            <li class="nav-item" data-bs-level="1"><a href="#relationship-to-nanite" class="nav-link">Relationship to Nanite</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#can-i-just-drag-an-asset-into-the-content-browser-again" class="nav-link">Can I just drag an asset into the content browser again?</a>
+            <li class="nav-item" data-bs-level="1"><a href="#import-workflow" class="nav-link">Import workflow</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#should-i-create-the-material-in-blender-or-unreal-how-do-i-change-materials" class="nav-link">Should I create the material in Blender or Unreal? How do I change materials?</a>
+            <li class="nav-item" data-bs-level="1"><a href="#automating-lod-setup" class="nav-link">Automating LOD Setup</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#how-do-i-preview-the-import-before-it-happens" class="nav-link">How do I preview the import before it happens?</a>
+            <li class="nav-item" data-bs-level="1"><a href="#lods-and-collision-import" class="nav-link">LODs and Collision Import</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#unreal-engine-references" class="nav-link">Unreal Engine References</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -129,26 +134,42 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="faq">FAQ</h1>
-<h1 id="how-do-i-re-import-an-asset-after-ive-imported-it-with-the-plugin">How do I re-import an asset after I've imported it with the Plugin</h1>
-<p>Assets remember which file path was used to import. You can see the file path by opening up the mesh, material, or other asset and looking for filepath.</p>
-<p>To re-import the asset simply right click the asset and select Reimport. This will reimport it with the same file that was used to import the asset. You can also select the "Reimport with New File" if the source mesh moved file location. An example is if you imported multiple assets from a single file, then later split the blend file into separate files for each asset you can re-import with the new file.</p>
-<h1 id="how-do-i-change-import-settings-when-reimporting-it-just-imports-with-no-dialog">How do I change Import settings when Reimporting? It just imports with no dialog</h1>
-<p>By default interchange will not show an interchange dialog when re-importing an asset. This is usually convenient, because usually using the same settings is sufficient. However, it is easy to show the dialog and change settings if desired.</p>
-<p>In the unreal editor you can enable "Show Import Dialog at Reimport" under the following menu.
-File &gt; Editor Settings &gt; General &gt; Interchange</p>
-<p>Note that Interchange also has other settings under Project Settings (also under Interchange)</p>
-<p>Also note that the static mesh editor has a button in the top left : "Reimport Mesh with Dialog". It's possible to use that as well.</p>
-<h1 id="can-i-just-drag-an-asset-into-the-content-browser-again">Can I just drag an asset into the content browser again?</h1>
-<p>Yes you can. It will import the asset over the old one, which can be fine in some cases. Note that if you changed the material or some other set up it's likely that importing an asset over the old one will recreate the original material or other undesired behavior.</p>
-<h1 id="should-i-create-the-material-in-blender-or-unreal-how-do-i-change-materials">Should I create the material in Blender or Unreal? How do I change materials?</h1>
-<p>In general it is recommended that you assign materials in blender but author the final material in unreal. This is for a few reasons.</p>
-<p>Unreal has a completely separate material graph. If you want materials to fit your game, it is best to author a master material in unreal and use material instances for any game assets you import. Blender material nodes and unreal material nodes are generally not a 1-1 mapping and work done making shaders in Blender will not be transferable to Unreal. Feel free to try and create preview materials in blender.</p>
-<p>In the future this plugin may be extended to more easily transfer material setups from unreal to blender. There are also plans to use USD's MaterialX to better import blender materials as they were authored. For now the best solution is to assign each mesh a material made in Unreal Engine. Simply create the material in unreal then assign it in the static mesh editor. Future re-imports of this mesh will not override the material change. After the material is assigned you can safely delete the original material. This is still the case as of late 2025.</p>
-<h1 id="how-do-i-preview-the-import-before-it-happens">How do I preview the import before it happens?</h1>
-<p>Interchange comes with a preview panel that can be show by hitting preview. This shows you what will be imported if you hit import. In the image I posted a skeletal mesh is being imported with 2 materials and 2 animations.
-<img alt="Pasted image 20250123181004.png" src="../Pictures/Pasted%20image%2020250123181004.png" /></p>
-<p>The preview panel updates whenever translator or pipeline settings are changed and can be a fast way to see what will be imported. Clicking on any item will show more details about the item - some of which are human readable.</p></div>
+<h1 id="importing-lods">Importing LODs</h1>
+<h1 id="lod-overview">LOD Overview</h1>
+<p>LOD stand for level of detail and are a system used to swap out meshes for less detailed meshes to get better memory and rendering performance. Swapping between different LODs usually happens based on screen size relative to the player's view, but can also be used to switch to reduce polygon counts for lower performance platforms.</p>
+<p>You should reference unreal's own guides for LOD generation which I will link at the end of this page.</p>
+<h1 id="relationship-to-nanite">Relationship to Nanite</h1>
+<p>Nanite is a replacement for LODs. If you are using Nanite you will generally not need LODs. The reason Nanite does not use LODs is it is already able to swap out parts of the mesh dynamically at runtime. </p>
+<p>The main exception to not need LODs this is if your game is planning on launching on multiple platforms - some of which do not support nanite. If you would like to set up LODs for your meshes you can look at unreal's nanite guide under the "Using Custom Fallback Mesh LODs for Nanite-enabled Meshes"</p>
+<p>It also worth noting that LODs can be used for complex collision regardless of whether you are using nanite or not.</p>
+<p><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/nanite-virtualized-geometry-in-unreal-engine">Nanite Virtualized Geometry in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community</a></p>
+<h1 id="import-workflow">Import workflow</h1>
+<p>LODs are relatively simple to import with Blender Interchange. Simply gather all of your LODs under a single empty in Blender. The name you give the empty does not matter since it will not be used. Under the empty you can add all of your LODs starting from 0 - which is the full resolution mesh. </p>
+<p>Each mesh must follow this format: LOD#_MeshName. </p>
+<p>The example below has LOD0_Sphere, LOD1_Sphere, and LOD3_Sphere in the example. The mesh in unreal will be called sphere and it will have 3 LODs. Note that in this example I intentionall made there spheres shrink so we can see the difference more easily. Generally you would want LODs to approximate the original mesh using a decimate modifier or something similar.</p>
+<p><img alt="LODExampleBlender.png" src="../Pictures/LODExampleBlender.png" /></p>
+<p>After importing into unreal through the blender interchange plugin you should see a single mesh imported with 3 LODs. You can switch between which LOD is displayed the in the static mesh editor using the dropdown in the top right of the screen or in the details panel.  If you have LOD Auto it will preview the swap between LODs based on screen size which can be helpful</p>
+<p>Note that if you have nanite enabled you will not be able to see the LOD displayed. You should disable nanite at least temporarily to see your LODs. You can disable nanite in the details panel or you can disable nanite in the import dialog when importing your mesh by toggling off "Build Nanite". Remember to hit Apply Changes or it won't take effect.</p>
+<p>Below you can see the largest sphere that I set as LOD0. You can see that 3 LODs where imported.</p>
+<p><img alt="LargeLOD.png" src="../Pictures/LargeLOD.png" /></p>
+<p>Moving the camera away on LOD Auto will swap to my lower resolution LOD - in this case a comically different LOD to show the difference.
+<img alt="Medium LOD.png" src="../Pictures/Medium%20LOD.png" /></p>
+<h1 id="automating-lod-setup">Automating LOD Setup</h1>
+<p>An alternative to making LODs in blender is having unreal do it automatically. These can get good results depending on your settings but will also give you less control. Please refer to this guide as a starting point if you want Unreal to generate LODs for you.</p>
+<p><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/static-mesh-automatic-lod-generation-in-unreal-engine">Static Mesh Automatic LOD Generation in Unreal Engine</a></p>
+<p>If you would like manual control with this plugin on import you can set LOD related settings on import. In the image below I've manually set the screen size needed for each LOD. If you find settings you like for a particular type of asset you can save them as a preset pipeline for future imports.</p>
+<p><img alt="LODSettingsOnImport.png" src="../Pictures/LODSettingsOnImport.png" /></p>
+<h1 id="lods-and-collision-import">LODs and Collision Import</h1>
+<p>You may have already read this in our collision guide, but you can import simple collision through Blender Interchange import. To do so simply add collision to your scene as detailed on the page, but include LOD0 with the name. </p>
+<p>In this example we would add a mesh named USP_LOD0_Sphere to add a sphere collider as simple collision. Refer to our collision guide for more information on how to add custom colliders to your simple collision on import.</p>
+<p>Unreal does not store simple collision per LOD and will only care about LOD0. If you add collision for LOD1 it will simply be ignored. Note that you can use a specific LOD for your complex collision if you are using complex collision.</p>
+<p><img alt="LODsWithCollision.png" src="../Pictures/LODsWithCollision.png" /></p>
+<h1 id="unreal-engine-references">Unreal Engine References</h1>
+<ul>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/creating-and-using-lods-in-unreal-engine">Creating and Using LODs in Unreal Engine | Unreal Engine 5.7 Documentation</a></li>
+<li>[Setting Up Per-Platform LODs](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-per-platform-lods</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/optimizing-lod-screen-size-per-platform-in-unreal-engine">Optimizing LOD Screen Size Per-Platform in Unreal Engine</a></li>
+</ul></div>
             </div>
         </div>
 

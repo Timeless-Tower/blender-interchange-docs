@@ -38,7 +38,10 @@
                                 <a href=".." class="nav-link">Welcome</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../Export%20Fine%20Control/" class="nav-link">Export Fine Control</a>
+                                <a href="../Animations%20Import/" class="nav-link">Animations Import</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Collision%20Import/" class="nav-link">Collision Import</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../FAQ/" class="nav-link">FAQ</a>
@@ -47,7 +50,13 @@
                                 <a href="./" class="nav-link active" aria-current="page">Features</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../Importing%20Animations/" class="nav-link">Importing Animations</a>
+                                <a href="../Full%20Scene%20Import/" class="nav-link">Full Scene Import</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Import%20Settings/" class="nav-link">Import Settings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Importing%20LODs/" class="nav-link">Importing LODs</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../Project%20Settings/" class="nav-link">Project Settings</a>
@@ -64,7 +73,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../Importing%20Animations/" class="nav-link">
+                                <a rel="next" href="../Full%20Scene%20Import/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -91,7 +100,12 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#notes" class="nav-link">Notes</a>
+            <li class="nav-item" data-bs-level="1"><a href="#a-note-on-fbx" class="nav-link">A Note on FBX</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#a-second-note-on-fbx" class="nav-link">A Second Note on FBX</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -107,6 +121,7 @@ The following asset types are supported from blender to unreal engine.</p>
 <thead>
 <tr>
 <th>Feature</th>
+<th>GLTF</th>
 <th>USD</th>
 <th>FBX</th>
 </tr>
@@ -116,24 +131,41 @@ The following asset types are supported from blender to unreal engine.</p>
 <td>Static Meshes</td>
 <td>YES</td>
 <td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>LOD Support</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Collision Import</td>
+<td>YES</td>
+<td>NO</td>
+<td>YES</td>
 </tr>
 <tr>
 <td>Skeletal Meshes</td>
+<td>YES</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
 <tr>
 <td>Materials</td>
 <td>Limited*</td>
+<td>Limited*</td>
 <td>Limited</td>
 </tr>
 <tr>
 <td>Morph Targets</td>
-<td>YES**</td>
-<td>YES**</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
 </tr>
 <tr>
 <td>Skeletal Animations</td>
+<td>YES</td>
 <td>YES</td>
 <td>YES</td>
 </tr>
@@ -141,32 +173,49 @@ The following asset types are supported from blender to unreal engine.</p>
 <td>Morph Target Animations</td>
 <td>YES</td>
 <td>YES</td>
+<td>YES</td>
 </tr>
 <tr>
 <td>Static Mesh Animations</td>
 <td>YES</td>
 <td>YES</td>
+<td>YES</td>
 </tr>
 <tr>
 <td>Levels</td>
-<td>Planned**</td>
-<td>Planned**</td>
+<td>YES</td>
+<td>YES**</td>
+<td>YES**</td>
 </tr>
 <tr>
 <td>Reimport</td>
 <td>YES</td>
 <td>YES</td>
+<td>YES</td>
 </tr>
 <tr>
-<td>*Materials are created and assigned but will not match any complex material graph created in blender. It is recommended to create materials in unreal separately using unreal's material graph. USD supports MaterialX which is a generic way of exporting material graph information. As of time of writing unreal and blender seem to have limitted support for materialX but supporting material transfer is planned in the future</td>
+<td>*Materials are created and assigned but will not match any complex material graph created in blender. It is recommended to create materials in unreal separately using unreal's material graph. USD supports MaterialX which is a generic way of exporting material graph information. As of time of writing unreal and blender seem to have limitted support for materialX but supporting material transfer is planned in the future.</td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p>** Level import is planned for a future release. The current focus is on individual assets in the content browser. In the meantime you can sync your blend scene using something like unreal's USD stage actor. In the future we will support creating level instances from blend files.</p>
-<h1 id="notes">Notes</h1>
-<p>When reimporting it's recommended that you right click on the asset(s) you want to reimport and select reimport. You may also drag the asset into unreal again and override it, but this may cause issues with overriding materials and other work done in unreal since it's overriding and not reimporting.</p></div>
+<p>** USD imports duplicates due to blender exporting duplicates and generally not supported advanced USD exports as of Blender 5.0</p>
+<h1 id="a-note-on-fbx">A Note on FBX</h1>
+<p>FBX can be a bit finicky. One thing to watch out for when importing FBX is that the name of the mesh asset is used instead of the instance in the blender scene which is what you might expect. Make sure to properly name each mesh in your scene appropriately.</p>
+<p>Here is a really common thing that can happen. You make something in blender and the object is properly named to what you want but the mesh is named something default. Cube, cylinder or whatever primitive you made the mesh from.</p>
+<p>FBX will use the mesh not the object so make sure to name it properly. This will be named Cylinder when importing which is not what you want.
+<img alt="NamingIssueRepo.png" src="../Pictures/NamingIssueRepo.png" /></p>
+<p>You should rename it to this. The orange node actually does not matter technically for FBX but may be used in other file formats.
+<img alt="FBXNamingCorrected.png" src="../Pictures/FBXNamingCorrected.png" /></p>
+<p>We do not currently perform rename fixups like this as part of our pipeline, but if this is something you want reach out to us in our discord and let us know. We currently have not added it because sometimes multiple objects in a scene share the same mesh data and a rename would be undesirable.</p>
+<p>https://discord.gg/fc2HYwJS</p>
+<h1 id="a-second-note-on-fbx">A Second Note on FBX</h1>
+<p>The above issue can actually cause a lot of issues if you have multiple meshes in your scene that all started from the same primitive or were duplicated.</p>
+<p>This looks like it will import 2 meshes but it will only import 1 and throw away the other one. FBX ignores the bit after the dot so it will just see Cylinder twice.
+<img alt="FBXOtherIssue.png" src="../Pictures/FBXOtherIssue.png" /></p>
+<p>It's worth noting that we recommend using the default file format of GLTF to avoid issues like this with FBX.</p></div>
             </div>
         </div>
 
