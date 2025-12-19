@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Material Import Overview - Blender-Interchange-Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Blender-Interchange-Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Welcome</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Animations%20Import/" class="nav-link">Animations Import</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Collision%20Import/" class="nav-link">Collision Import</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../FAQ/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Features/" class="nav-link">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Full%20Scene%20Import/" class="nav-link">Full Scene Import</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Import%20Settings/" class="nav-link">Import Settings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Importing%20LODs/" class="nav-link">Importing LODs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Material Import Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Project%20Settings/" class="nav-link">Project Settings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Quickstart/" class="nav-link">Quickstart</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                            <li class="nav-item">
+                                <a rel="prev" href="../Importing%20LODs/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Project%20Settings/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#material-import-overview" class="nav-link">Material Import Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#how-interchange-handles-materials" class="nav-link">How Interchange Handles Materials</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#using-a-custom-material-instance-base" class="nav-link">Using a Custom Material Instance Base</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#hooking-up-material-instance-parameters" class="nav-link">Hooking up Material Instance Parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#how-blender-encodes-parameters" class="nav-link">How Blender encodes Parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#gltf-material-names" class="nav-link">GLTF Material Names</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="material-import-overview">Material Import Overview</h1>
+<p>Importing materials accurately from Blender can be a bit involved. This guide hopefully explains the nuance of how you can get materials you author in Blender into Unreal Engine in a consistent way. This guide was written for Unreal Engine 5.7 and later. It also assumes that you are using the default format of glTF for your translator - see <a href="../Import%20Settings/">Import Settings</a> for for more information.</p>
+<h1 id="how-interchange-handles-materials">How Interchange Handles Materials</h1>
+<p>As you likely know, the Blender Interchange plugin is built on top of Epic's Interchange framework - which is Epic's latest and greatest framework for importing assets. Epic's philosophy on material import until the 5.7 release has been to try recreate the material graphs created externally with Unreal's shader nodes. </p>
+<p>As you can imagine this can be a bit of an error-prone process which is not what most people want when importing materials. Luckily, as of 5.7 that strategy has shifted and they have indicated that they will be focusing primarily on pre-built materials that have material instances created instead of entirely new materials. </p>
+<p>Making material instances enables transferring materials defined in Blender to materials set up in the engine can become a lot more straightforward.  On the blender side if you bake your material information into textures those textures will be hooked up to the proper material instance on import resulting in a smooth experience.</p>
+<h1 id="using-a-custom-material-instance-base">Using a Custom Material Instance Base</h1>
+<p>By default the plugin will import your material for you using the glTF materials defined in the project settings. Under Edit &gt; Project Settings &gt; glTF Settings you'll find a list of material archetypes mapped to material instances that ship with the engine and provide decent out of the box results.</p>
+<p>However it's worth noting that there are 2 separate ways you can change these material instances to one specific to your project. 
+- You can specify an override material instance in the import dialog. This has higher priority than the project settings 
+- You can change the project settings to use your material instance by default. You can hook up your material to each entry or you can just override MI_Default_Blend and MI_Default_Blend_DS which are the most common glTF shading models you will encounter. More info on that later.</p>
+<p><img alt="GlTFSettings.png" src="../Pictures/GlTFSettings.png" /></p>
+<h1 id="hooking-up-material-instance-parameters">Hooking up Material Instance Parameters</h1>
+<p>At this point you may be wondering how import knows which material instance parameters to override. The short answer is that it's looking for specific parameters like BaseColorTexture and NormalTexture. </p>
+<p>The default glTF material instances have the correct names so they hook up without issue. However, you do not need to provide exactly the same names to properly import. Blender Interchange has an alias system that allows you to re-map the built in parameter names to ones that work with your projects materials or even marketplace materials. For instance a material might have a AlbedoTexture instead of BaseColorTexture.</p>
+<p>Specifying an alias is simple . The settings are under the Blender glTF pipeline. The plugin ships with a few prespecified and you can specify other alias mappings using a dropdown or manually. </p>
+<p>The dropdown shows you the parameters that are actually available for your current session to help avoid typos. More on that below</p>
+<p><img alt="MaterialParameters.png" src="../Pictures/MaterialParameters.png" /></p>
+<p>Here's an overview of what each parameter means and their expected use-case</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BaseColorTexture</td>
+<td>The base color or albedo. This is hooked up when the model uses a texture</td>
+</tr>
+<tr>
+<td>BaseColorFactor</td>
+<td>This is a tint to apply either by multiplying the texture or by itself for flat color materials</td>
+</tr>
+<tr>
+<td>bHasBaseColorTexture</td>
+<td>Set to false if texture if the Blender shader was using a flat color instead of a texture. Not specified as an override if a texture was used</td>
+</tr>
+<tr>
+<td>MetallicRoughnessTexture</td>
+<td>This is an ORM texture. The glTF materials for the engine use the GB channels of this texture.</td>
+</tr>
+<tr>
+<td>bHasMetallicRoughnessTexture</td>
+<td>Set to true if texture is being used for metallic and roughness</td>
+</tr>
+<tr>
+<td>OcclusionTexture</td>
+<td>This is an occlusion texture. The glTF materials use only the R channel and if you use ORM this will be the same texture as the MetallicRoughnessTexture.</td>
+</tr>
+<tr>
+<td>bHasOcclusionTexture</td>
+<td>Set to false if no ORM texture hooked up in blender shader. Not set if a texture was provided.</td>
+</tr>
+<tr>
+<td>NormalTexture</td>
+<td>Texture for normals.</td>
+</tr>
+<tr>
+<td>NormalScale</td>
+<td>Strength of normals. This corresponds to the strength you plug into the normal map node in blender before plugging the result into the normal pin of your shader.</td>
+</tr>
+<tr>
+<td>bHasNormalTexture</td>
+<td>Set to false if no normal texture hooked up in blender shader. Not set if a texture was provided.</td>
+</tr>
+<tr>
+<td>SpecularTexture</td>
+<td>This uses the alpha channel by default so you can pack this into the ORM texture's alpha channel. If blender sees any textures hooked up to Specular IOR it will use this texture</td>
+</tr>
+<tr>
+<td>bHasSpecularTexture</td>
+<td>True if a specular texture exists. Not specified if blender had no texture</td>
+</tr>
+<tr>
+<td>SpecularFactor</td>
+<td>This is a a multiplier on the texture or a hard-coded value for the entire material</td>
+</tr>
+<tr>
+<td>EmissiveTexture</td>
+<td>This is used for glow. It's a RBG color in both Unreal and in Blender. Hook up the to the Emission color in blender to hook it up.</td>
+</tr>
+<tr>
+<td>bHasEmissiveTexture</td>
+<td>True if there is an emissive texture. Non-existent if there is none.</td>
+</tr>
+<tr>
+<td>EmissiveFactor</td>
+<td>This is RBG color that gets multiplied with the emissive texture or used as is if there is no texture. You can get this passed to blender using a mix node with a factor of 1.</td>
+</tr>
+<tr>
+<td># Example</td>
+<td></td>
+</tr>
+<tr>
+<td>Here's an example material you should consider copying to get good results on import. This material is based on <a href="https://docs.blender.org/manual/en/latest/addons/import_export/scene_gltf2.html">blender's official gltf export guide</a>. For this material I used blender's built in bake functionality to bake textures but you could also hook up textures created externally. It's worth noting the plugin also does a good job of exporting simple materials like materials with flat shading and hard coded values.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="BlenderExampleMaterial.png" src="../Pictures/BlenderExampleMaterial.png" /></p>
+<p>On the Unreal side I've created a simple material to receive the textures I hooked up in Blender. Your material can be anything even marketplace materials as long as it can receive textures as parameters.</p>
+<h1 id="how-blender-encodes-parameters">How Blender encodes Parameters</h1>
+<p>One thing to note is that blender only exports parameters for glTF if they are relevant to your shader. A common example of this is with textures. Every texture has a corresponding bHasTexture parameter but that is only set to false if the texture wasn't provided. It's implicitly true otherwise.</p>
+<p>Another example is if you're original shader did not have a tint or flat color hooked up BaseColorFactor will not be set.</p>
+<h1 id="gltf-material-names">GLTF Material Names</h1>
+<p>You may have noticed that the glTF settings in unreal have a lot of different names not just MI_Default_Opaque and be a bit overwhelmed over all the options. The reason for this is that glTF actually has 6 built-in shading models, 3 blend modes, and 2 backface culling modes. This results in 6 x 3 x 2 = 36 different possible materials. The transmission shading model only has one alpha mode so there are actually 34 possible materials.</p>
+<p>The name of the material instance follows this format:
+One Sided Materials: MI_ShadingModel_BlendMode
+Two Sided Materials: MI_ShadingModel_BlendMode_DS
+Transmission Materials: MI_Transmission_{_DS}</p>
+<p>Below are the model combinations available in unreal and how to set up their usage in blender.  </p>
+<table>
+<thead>
+<tr>
+<th>Shading Model</th>
+<th>Description</th>
+<th>How to Enable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DEFAULT</td>
+<td>This is what your material will likely get.</td>
+<td>Enabled by default unless other model conditions are met.</td>
+</tr>
+<tr>
+<td>UNLIT</td>
+<td>Unlit does not take lights into consideration when shading the pixels. This could be used for stylistic reasons.</td>
+<td>Use a mix shader instead of a Principled BSDF. See the official guide for the setup.</td>
+</tr>
+<tr>
+<td>SHEEN</td>
+<td>Sheen is used for reflective materials that have microsurface detail (cloth or silk for instance)</td>
+<td>Output a non-zero value to the sheen output of your shader.</td>
+</tr>
+<tr>
+<td>CLEARCOAT</td>
+<td>This adds a reflective layer over your material similar to car paint</td>
+<td>Output a non-zero value to the Coat output of your shader. Takes priority over Sheen.</td>
+</tr>
+<tr>
+<td>TRANSMISSION</td>
+<td>This is used to render materials like glass or liquids which refract/transmit light internally.</td>
+<td>Output a non-zero value to Transmission. Takes Priority over Clearcoat and Sheen.</td>
+</tr>
+<tr>
+<td>SPECULARGLOSSINESS</td>
+<td>This is an alternative shading model that is not well supported in blender</td>
+<td>not supported for export</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Blend Mode</th>
+<th>Description</th>
+<th>How to Enable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opaque</td>
+<td>No alpha in the material. This is the cheapest alpha mode to use for opaque materials.</td>
+<td>Used when alpha is hard set to 1.0</td>
+</tr>
+<tr>
+<td>Mask</td>
+<td>Alpha below a threshold sets the pixel to be invisible or masked out. This is a cheaper version of blend.</td>
+<td>Alpha is hooked up to a value through a Round node. Blender looks for this node to opt in to this model.</td>
+</tr>
+<tr>
+<td>Blend</td>
+<td>Alpha sets transparency of the pixel. This is the most expensive blending mode in games.</td>
+<td>Non-zero values are used for the model without a round node</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Two-Sided</th>
+<th>Description</th>
+<th>How to Enable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yes</td>
+<td>Backfaces are visible. More expensive in some cases.</td>
+<td>Enabled by default.</td>
+</tr>
+<tr>
+<td>No</td>
+<td>Backfaces are not visible.</td>
+<td>Go to the materials panel in blender. Uncheck Backface Culling for the camera under the Viewport Display section</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

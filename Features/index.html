@@ -59,6 +59,9 @@
                                 <a href="../Importing%20LODs/" class="nav-link">Importing LODs</a>
                             </li>
                             <li class="nav-item">
+                                <a href="../Material%20Import/" class="nav-link">Material Import Overview</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="../Project%20Settings/" class="nav-link">Project Settings</a>
                             </li>
                             <li class="nav-item">
@@ -153,7 +156,7 @@ The following asset types are supported from blender to unreal engine.</p>
 </tr>
 <tr>
 <td>Materials</td>
-<td>Limited*</td>
+<td>YES</td>
 <td>Limited*</td>
 <td>Limited</td>
 </tr>
@@ -195,7 +198,7 @@ The following asset types are supported from blender to unreal engine.</p>
 </tr>
 </tbody>
 </table>
-<p>*Materials are created and assigned but will not match any complex material graph created in blender. It is recommended to create materials in unreal separately using unreal's material graph. USD supports MaterialX which is a generic way of exporting material graph information. As of time of writing unreal and blender seem to have limitted support for materialX but supporting material transfer is planned in the future.</p>
+<p>*Materials are created and assigned as material instances by default. It is recommended to use glTF when importing materials. See <a href="../Material%20Import/">Material Import</a> for more information.</p>
 <p>** USD imports duplicates due to blender exporting duplicates and generally not supported advanced USD exports as of Blender 5.0</p>
 <h1 id="a-note-on-fbx">A Note on FBX</h1>
 <p>FBX can be a bit finicky. One thing to watch out for when importing FBX is that the name of the mesh asset is used instead of the instance in the blender scene which is what you might expect. Make sure to properly name each mesh in your scene appropriately.</p>
